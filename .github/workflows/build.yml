@@ -30,9 +30,12 @@ jobs:
         id: date
         run: echo "DATE=$(date +%Y-%m-%d-%H:%M)" >> $GITHUB_ENV
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: github.ref_type == 'tag'
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: "${{ github.ref_name }} — ${{ env.DATE }}"
-          files: cheatsheet.pdf
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: cheatsheet.pdf
+          asset_name: cheatsheet.pdf
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Release"
