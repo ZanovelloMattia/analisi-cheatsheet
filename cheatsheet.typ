@@ -16,17 +16,14 @@
 
 #set page(columns: 5, margin: 5pt, flipped: true, footer: footer)
 #set columns(gutter: 0pt)
-
-
-// #show: note => classnote(note, title: "o-piccolo")
-// #place(
-//   top + center,
-//   float: true,
-//   scope: "parent",
-//   text(1.4em, weight: "bold")[
-//     Analisi 1 Cheatsheet
-//   ],
-// )
+#place(
+  top + center,
+  float: true,
+  scope: "parent",
+  text(1.4em, weight: "bold")[
+    Analisi 1 Cheatsheet
+  ],
+)
 
 #let section(title, content, color: black, raw: false) = {
   set table(stroke: color)
@@ -122,9 +119,73 @@
   ]
 ]
 
+#section(color: purple.darken(50%))[definizioni][
+  Da mettere:
+  - definizione massimo minimo ecc ecc
+  - definizione SUP INF
+  - definizione funzione lipschizstiana o come cazzo si scrive
+
+  === Funzioni $f:A -> B$
+
+  #table(columns: (1fr, 1fr))[
+    === Suriettiva
+    $ forall b in B exists a in A | f(a) = b \ "Im"(f) = B $
+
+    #set align(center)
+    #image("./assets/suriettiva.png", height: 30pt)
+  ][
+    === Iniettiva
+    $ forall a_1, a_2 in A | a_1 != a_2 \ => f(a_1) != f(a_2) $
+
+    #set align(center)
+    #image("./assets/iniettiva.png", height: 30pt)
+  ]
+
+  === Limiti
+  #table(columns: (1fr, 1fr, 3.5fr))[
+    $ x->c $
+  ][
+    $ L in RR $
+  ][
+    $forall epsilon > 0 exists delta > 0 | delta > |x-c| => |f(x) - L| < epsilon$
+  ][
+    $ x->c $
+  ][
+    $ L = plus.minus oo $
+  ][
+    $forall M > 0 exists delta > 0 | delta > |x-c| => plus.minus f(x) > M$
+  ][
+    $ x->plus.minus oo $
+  ][
+    $ L in RR $
+  ][
+    $forall epsilon > 0 exists M > 0 | |x| > M => |f(x) - L| < epsilon$
+  ][
+    $ x->plus.minus oo $
+  ][
+    $ L = plus.minus oo $
+  ][
+    $forall M > 0 exists R > 0 | |x| > R => plus.minus f(x) > M$
+  ]
+]
+
+#section(color: red.darken(50%))[limiti notevoli][
+  #set text(size: 5pt)
+  #table(columns: (1fr, 1fr, 1fr))[
+    $ lim_(x->0) frac(sin x, x) = 1 $][
+    $ lim_(x->0) (log_a (1 + x))/ x = 1/(ln a) $][
+    $ lim_(x->oo) (1 + 1/x)^x = e $][
+    $ lim_(x->0) (overbrace(a^x, a>0) - 1)/(x) = ln a $][
+    $ lim_(x->0) (1 - cos x)/(x^2) = 1/2 $][
+    $ lim_(x->0) ((1+x)^k - 1)/x = k $][
+    $ lim_(x->0) (tan x)/x = 1 $][
+    $ lim_(x->0) arcsin(x)/x = 1 $][
+  ]
+]
+
 #section(color: aqua.darken(30%))[sviluppi di taylor][
   #table(columns: (auto, 1fr))[
-    $ sin(x) $
+    $sin(x)$
   ][
     $x - x^3/6 + x^5/120 - x^7/5040 + o(x^7)$
   ][
@@ -184,68 +245,8 @@
   ][
     $x - x^3/3 + 2/15x^5 - 17/315x^7 + 62/2835x^9 + o(x^9)$
   ]
-]#section(color: red.darken(50%))[limiti notevoli][
-  #set text(size: 5pt)
-  #table(columns: (1fr, 1fr, 1fr))[
-    $ lim_(x->0) frac(sin x, x) = 1 $][
-    $ lim_(x->0) (log_a (1 + x))/ x = 1/(ln a) $][
-    $ lim_(x->oo) (1 + 1/x)^x = e $][
-    $ lim_(x->0) (overbrace(a^x, a>0) - 1)/(x) = ln a $][
-    $ lim_(x->0) (1 - cos x)/(x^2) = 1/2 $][
-    $ lim_(x->0) ((1+x)^k - 1)/x = k $][
-    $ lim_(x->0) (tan x)/x = 1 $][
-    $ lim_(x->0) arcsin(x)/x = 1 $][
-  ]
 ]
-#section(color: purple.darken(70%))[definizioni][
-  Da mettere:
-  - definizione massimo minimo ecc ecc
-  - definizione SUP INF
-  - definizione funzione lipschizstiana o come cazzo si scrive
 
-  === Funzioni $f:A -> B$
-
-  #table(columns: (1fr, 1fr))[
-    === Suriettiva
-    $ forall b in B exists a in A | f(a) = b \ "Im"(f) = B $
-
-    #set align(center)
-    #image("./assets/suriettiva.png", height: 30pt)
-  ][
-    === Iniettiva
-    $ forall a_1, a_2 in A | a_1 != a_2 \ => f(a_1) != f(a_2) $
-
-    #set align(center)
-    #image("./assets/iniettiva.png", height: 30pt)
-  ]
-
-  === Limiti
-  #table(columns: (1fr, 1fr, 3.5fr))[
-    $ x->c $
-  ][
-    $ L in RR $
-  ][
-    $forall epsilon > 0 exists delta > 0 | delta > |x-c| => |f(x) - L| < epsilon$
-  ][
-    $ x->c $
-  ][
-    $ L = plus.minus oo $
-  ][
-    $forall M > 0 exists delta > 0 | delta > |x-c| => plus.minus f(x) > M$
-  ][
-    $ x->plus.minus oo $
-  ][
-    $ L in RR $
-  ][
-    $forall epsilon > 0 exists M > 0 | |x| > M => |f(x) - L| < epsilon$
-  ][
-    $ x->plus.minus oo $
-  ][
-    $ L = plus.minus oo $
-  ][
-    $forall M > 0 exists R > 0 | |x| > R => plus.minus f(x) > M$
-  ]
-]
 
 #section()[funzioni iperboliche][
   TODO
