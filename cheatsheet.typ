@@ -255,193 +255,195 @@
 
 #section[derivate / primitive][
 
-  #set text(5pt)
-  #table(columns: (60pt, 40pt, 60pt),
-  
-  rows: (15pt, 15pt, 15pt),
-  inset: 4pt,
-  align: (horizon, horizon, horizon),
+  #let derivate = rgb("#78101c");
+  #let integrali = rgb("#0a0885");
 
-  
-  table.header(
-    align(center)[
+  #set text(5pt)
+  #table(
+    columns: (2fr, 1fr, 2fr),
+    inset: 4pt,
+    align: (horizon, horizon, horizon),
+
+    table.header(
+      align(center)[
+        #text(
+          fill: derivate,
+          [*$d/(d x) f(x)$*],
+        )],
+      align(center)[*$f(x)$*],
+      align(center)[
+        #text(
+          fill: integrali,
+          [*$F(x)$*],
+        )],
+    ),
+  )[
     #text(
-      fill: rgb("B71C1C"),
-      [DERIVATA]
-    )], 
-    align(center)[$f(x)$], 
-    align(center)[
-    #text(
-      fill: rgb("#1C77D1"),
-      [PRIMITIVA]
-    )]
-  ))[
-    #text(
-      fill: rgb("B71C1C"),
-      $ 0 $
+      fill: derivate,
+      $ 0 $,
     )
   ][
     $ a $
   ][
     #text(
-      fill: rgb("#1C77D1"),
+      fill: integrali,
+      $ a x $,
+    )
+  ][
+    #text(
+      fill: derivate,
+      $ a $,
+    )
+  ][
     $ a x $
+  ][
+    #text(
+      fill: integrali,
+      $ a x^2 / 2 $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ a $
-    )
-  ][
-    $ a x $
-  ][
-    #text(
-      fill: rgb("#1C77D1"),
-    $ a x^2 / 2 $
-    )
-  ][
-    #text(
-      fill: rgb("B71C1C"),
-    $ a x^(a-1) $
+      fill: derivate,
+      $ a x^(a-1) $,
     )
   ][
     $ x^a $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ (x^(a+1))/(a+1) space #text(4pt)[con $ x != -1 $] $ 
+      fill: integrali,
+      $ (x^(a+1))/(a+1) space #text(4pt)[con $ x != -1 $] $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ e^x $
+      fill: derivate,
+      $ e^x $,
     )
   ][
     $ e^x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ e^x $
+      fill: integrali,
+      $ e^x $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-      $ 1/x $
+      fill: derivate,
+      $ 1/x $,
     )
   ][
     $ ln x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ x (ln x - 1) $
+      fill: integrali,
+      $ x (ln x - 1) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ -1/x^2 $
+      fill: derivate,
+      $ -1/x^2 $,
     )
   ][
     $ 1/x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ ln abs(x) $
+      fill: integrali,
+      $ ln abs(x) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ cos x $
+      fill: derivate,
+      $ cos x $,
     )
   ][
     $ sin x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ -cos x $
-    ) 
+      fill: integrali,
+      $ -cos x $,
+    )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ -sin x $
+      fill: derivate,
+      $ -sin x $,
     )
   ][
     $ cos x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ sin x $
+      fill: integrali,
+      $ sin x $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ 1/(cos^2 x) = 1 + tan^2 x $
+      fill: derivate,
+      $ 1/(cos^2 x) = 1 + tan^2 x $,
     )
   ][
     $ tan x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ -ln abs(cos x) $
+      fill: integrali,
+      $ -ln abs(cos x) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ 1 / sqrt(1 - x^2) $
+      fill: derivate,
+      $ 1 / sqrt(1 - x^2) $,
     )
   ][
     $ arcsin x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ x arcsin x + sqrt(1 - x^2) $
+      fill: integrali,
+      $ x arcsin x + sqrt(1 - x^2) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ -1/sqrt(1-x^2) $
+      fill: derivate,
+      $ -1/sqrt(1-x^2) $,
     )
   ][
     $ arccos x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ x arccos x - sqrt(1- x^2) $
+      fill: integrali,
+      $ x arccos x - sqrt(1- x^2) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ 1/(1+x^2) $
+      fill: derivate,
+      $ 1/(1+x^2) $,
     )
   ][
     $ arctan x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ x arctan x - 1/2 ln(1+x^2) $
+      fill: integrali,
+      $ x arctan x - 1/2 ln(1+x^2) $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ cosh x $
+      fill: derivate,
+      $ cosh x $,
     )
   ][
     $ sinh x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ cosh x $
+      fill: integrali,
+      $ cosh x $,
     )
   ][
     #text(
-      fill: rgb("B71C1C"),
-    $ sinh x $
-  )
+      fill: derivate,
+      $ sinh x $,
+    )
   ][
     $ cosh x $
   ][
     #text(
-      fill: rgb("#1C77D1"),
-    $ sinh x $
+      fill: integrali,
+      $ sinh x $,
     )
   ]
 ]
