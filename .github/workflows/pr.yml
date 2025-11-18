@@ -19,10 +19,14 @@ jobs:
           source_file: |
             cheatsheet.typ
           options: "--font-path=./fonts/"
-      - name: Pull request artifacts
-        uses: gavv/pull-request-artifacts@v2
+      - name: Upload artifacts
+        id: artifact
+        uses: actions/upload-artifact@v4
         with:
-          commit: ${{ github.event.pull_request.head.sha }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: |
-              cheatsheet.pdf
+          name: PDF
+          path: cheatsheet.pdf
+      - name: Add link with comment
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            Link al PDF compilato ${{ steps.artifact.outputs.artifact-url }}
