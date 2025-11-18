@@ -57,7 +57,7 @@
     === Serie armonica
     $ sum 1/n^lambda $
 
-    converge per $lambda > 1$ #h(1fr) #box(inset: -2pt)[#image(height: 10pt, "assets/very-important-cat.jpeg")]
+    converge per $lambda > 1$ #h(1fr) #box(inset: -2pt)[#image(height: 10pt, "assets/very-important-cat.jpeg")] #h(1pt)
   ][
     === Serie armonica 2
     $ sum 1/(n |log n|^lambda) "&" sum 1/(n log_lambda n) $
