@@ -7,8 +7,8 @@ on:
 jobs:
   build:
     permissions:
-        contents: write
-        pull-requests: write
+        contents: write-all
+        pull-requests: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
