@@ -171,7 +171,9 @@
   ]
 ]
 
-#section(color: red.darken(50%))[limiti notevoli][
+#section(color: red.darken(50%))[Limiti][
+  *Ordini per $x->oo$*: $log x < sqrt(x) < x^k < k^x < x! < x^x$
+
   #set text(size: 5pt)
   #table(columns: (1fr, 1fr, 1fr))[
     $ lim_(x->0) frac(sin x, x) = 1 $][
