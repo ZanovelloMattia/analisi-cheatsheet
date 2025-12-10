@@ -582,9 +582,30 @@
 ]
 
 #section[numeri complessi][
-  Li dobbiamo ancora fare
-  - Coniugato
-  - Valore assoluto
+  #table(columns: (1fr, auto, auto))[
+    $z in CC$\
+    $z = a + i b$\
+    con $a, b in RR$\
+    e $i^2=-1$
+  ][
+    ==== Complesso coniugato
+    $overline(z) = a - b i$
+    ==== Modulo
+    $|z| = |overline(z)| = sqrt(a^2 + b^2)$
+  ][
+    === Piano di gauss
+    $z=(a,b) in RR times RR = RR^2$\
+    $Im(z) ~ y $ sul piano cartesiano\
+    $Re(z) ~ x $ sul piano cartesiano
+  ]
+  == Algebretta
+  #table(columns: (1fr, 1fr))[ 
+    $z = a + b i$ ][ $z= c + d i$ 
+    ][ $z+w = (a+c) + i(b+d)$ ][ $z dot w = (a c - b d) + i(a d + b c)$
+    ][ $1/z = a/(a^2 + b^2) - b/(a^2 + b^2)$ ][ 
+      $w/z = (a/(a^2 + b^2) - b/(a^2 + b^2))(c + d i)$
+    ]
+  == TODO
   - Identità di eulero
   - Identità trigonometriche e numeri complessi
 ]
