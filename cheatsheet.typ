@@ -2,7 +2,7 @@
 // #import "/typst/lib.typ": *
 
 // Settings generali per ridurre spazio sprecato
-#set text(size: 5pt, font: ("Atkinson Hyperlegible Next", "Atkinson Hyperlegible"))
+#set text(size: 4.5pt, font: ("Atkinson Hyperlegible Next", "Atkinson Hyperlegible"))
 #set table(inset: 3pt)
 
 #let rainbow(content) = {
@@ -315,7 +315,6 @@
 #section(color: rgb("#a47b1d"))[derivate / primitive][
 
   TODO:
-  - Regole di derivazione?
   - Retta tangente
   - Punti di non derivabilità
 
@@ -550,8 +549,31 @@
       fill: integrali,
       $ x arctan x - 1/2 ln(1+x^2) $,
     )
+  ][
+    $ 1/sqrt(1 + x^2) $
+  ][
+    $ "arcsinh"(x) $
+  ][
+      $ x "arcsinh"(x) - sqrt(1 + x^2) $
+  ][
+    $ 1/(sqrt(1-x) sqrt(1 + x)) $
+][
+    $ "arccosh"(x) $
+][
+    #text(size: 4pt)[
+    $ x "arccosh"(x) - sqrt(1-x) sqrt(1 + x)  $
+    ]
+][
+    $ 1/(1 - x^2) $
+  ][
+    $ "arctanh"(x) $
+  ][
+      #text(size: 4pt)[
+      $ x "arctanh"(x) + 1/2 ln(1 - x^2) $
+      ]
   ]
-  Algebretta delle derivate
+
+  === Algebretta delle derivate
   #table( columns: (auto, 1fr) )[
     $ [f(x) plus.minus g()]' = f'(x) plus.minus g'(x) $
   ][
@@ -569,7 +591,8 @@
 
 #section[integrali][
     Media integrale pesata:
-    int_a^b f(t)g(t)dt = f'(c) int_a^b g(t) dt
+
+   $ integral_a^b f(t)g(t) d t = f'(c) integral_a^b g(t) d t$
 
   Da mettere:
   - Proprietà degli integrali
@@ -582,6 +605,12 @@
 ]
 
 #section[numeri complessi][
+    === Polinomio a coefficienti reali
+    #text(size: 4pt)[
+    - Un polinomio di qualsiasi grado $n$ a coefficienti reale ha esattamente $n$ soluzioni.
+    - Se il polinomio è complesso allora ogni soluzione complessa avrà anche il suo coniugato
+    ]
+
   #table(columns: (1fr, auto, auto))[
     $z in CC$\
     $z = a + i b$\
@@ -598,20 +627,59 @@
     $Im(z) ~ y $ sul piano cartesiano\
     $Re(z) ~ x $ sul piano cartesiano
   ]
-  == Algebretta
-  #table(columns: (1fr, 1fr))[ 
-    $z = a + b i$ ][ $z= c + d i$ 
+  === Algebretta
+  #table(columns: (1fr, 1fr))[
+    $z = a + b i$ ][ $z= c + d i$
     ][ $z+w = (a+c) + i(b+d)$ ][ $z dot w = (a c - b d) + i(a d + b c)$
-    ][ $1/z = a/(a^2 + b^2) - b/(a^2 + b^2)$ ][ 
-      $w/z = (a/(a^2 + b^2) - b/(a^2 + b^2))(c + d i)$
+    ][ $1/z = a/(a^2 + b^2) - (b i)/(a^2 + b^2)$ ][
+      $w/z = (a/(a^2 + b^2) - (b i)/(a^2 + b^2))(c + d i)$
     ]
-  == TODO
+  === Trigonometria
+  #table(columns: (auto, auto))[
+      $e^(i theta) = cos theta + i sin theta$ \
+      $(cos theta + i sin theta) = cos (n theta) + i sin(n theta)$
+  ][
+      $z = r(cos theta + i sin theta)$
+  ]
   - Identità di eulero
   - Identità trigonometriche e numeri complessi
+  - Radici del polinomio
 ]
 #section[equazioni differenziali][
-  Le dobbiamo ancora fare
-  - Problemi di Cauchy vanno alla grande nell'esame
+    === Un po' di teoria i guess?
+    - Lo spazio vettoriale delle soluzioni di un'equazione differenziale di grado $n$
+      ha $dim V = n$
+  #table(columns: (1fr, 1fr))[
+      === Variabili separabili
+      $ y'(x) = y(x)g(x) $
+      Si risolve dividendo per $y(x)$ \
+      $arrow.double integral (y'(x))/y(x) = integral g(x)$
+  ][
+      === Lineari del primo ordine
+      $ y'(x) = y(x)f(x) + g(x) $
+      Si può procedere in 2 modi:
+      1. Risolvere la variabili separabili omogenea associata e poi cercare il fattore $overline(u)(x)$
+      2. $u(x) = e^(-F(x)) dot integral e^(F(x))g(x) d x$
+  ][
+      === Secondo ordine lineari om.
+      $ a u''(x) + b u'(x) + c u(x) = f(x) $
+      1. Trovare l'equazione associata $a lambda^2 + b lambda + c = 0$
+        - $Delta > 0 => c_1 e^(lambda_1 x) + c_2 e^(lambda_2 x)$
+        - $Delta = 0 => c_1 e^(lambda x) + underline(x) c_2 e^(lambda x)$
+        - $Delta < 0 =>$\ $e^(alpha x)(c_1 cos(x) + c_2 sin (x))$\
+          #text(size: 4pt)[La soluzione è nella forma $alpha plus.minus beta i$]
+  ][
+      === Secondo ordine lineari
+      (continuazione...)
+      2. Se l'eq $eq.not$ omogenea
+         allora trovare fattore $overline(u)(x)$ tale che
+         #text(size: 4pt)[$a overline(u'')(x) + b overline(u')(x) + c overline(u)(x) = f(x)$]
+         - $f(x) = e^(alpha t) => a e^(alpha t)$
+         - $f(x) =$ polinomio $n$ $=>$ ''
+         - $f(x) = sin(x)"/"cos(x) => a sin(x) + b cos(x)$
+         - $f(x) = "soluzione omogenea"$ \
+            $=>$ se $f(x)$ è soluzione omogenea, allora moltiplicare per $x$ q.b.
+  ]
 ]
 
 #pagebreak()
