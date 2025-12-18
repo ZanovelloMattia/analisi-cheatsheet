@@ -636,17 +636,17 @@
     ]
   === Trigonometria
   #table(columns: (1fr, 1fr))[
-      $z = rho(cos theta + i sin theta) = rho e^(i theta)$ \
+      $z = rho(cos theta + i sin theta) = rho e^(i theta)$
+  ][
       $w = r(cos alpha + i sin alpha) = r e^(i alpha)$
   ][
-      $e^(i theta) = cos theta + i sin theta$ \
-      $(cos theta + i sin theta) = cos (n theta) + i sin(n theta)$
+      $z dot w &= rho dot r [cos(theta + alpha) + i sin(theta + alpha)]$
   ][
-      $z dot w = rho dot r [cos(theta + alpha) + i sin(theta + alpha)]$ \
-      $z / w = rho / r [cos(theta - alpha) + i sin(theta - alpha)]$
+      $z / w &= rho / r [cos(theta - alpha) + i sin(theta - alpha)]$
   ][
-
+      $ z^n = rho^n e^(i theta n) = rho^n [cos(theta n) + i sin(theta n)]$
   ]
+
   - Identità di eulero
   - Identità trigonometriche e numeri complessi
   - Radici del polinomio
