@@ -635,11 +635,17 @@
       $z/w = (a c + b d)/(c^2 + d^2) + i (b c - a d)/(c^2 + d^2)$
     ]
   === Trigonometria
-  #table(columns: (auto, auto))[
+  #table(columns: (1fr, 1fr))[
+      $z = rho(cos theta + i sin theta) = rho e^(i theta)$ \
+      $w = r(cos alpha + i sin alpha) = r e^(i alpha)$
+  ][
       $e^(i theta) = cos theta + i sin theta$ \
       $(cos theta + i sin theta) = cos (n theta) + i sin(n theta)$
   ][
-      $z = r(cos theta + i sin theta)$
+      $z dot w = rho dot r [cos(theta + alpha) + i sin(theta + alpha)]$ \
+      $z / w = rho / r [cos(theta - alpha) + i sin(theta - alpha)]$
+  ][
+
   ]
   - Identità di eulero
   - Identità trigonometriche e numeri complessi
