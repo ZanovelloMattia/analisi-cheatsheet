@@ -590,12 +590,33 @@
 ]
 
 #section[integrali][
-    Media integrale pesata:
+  === Proprietà
+  #table(columns: (auto, auto))[
+    $integral_a^b f(x) + g(x) d x = integral_a^b f(x) d x + integral_a^b g(x) d x$
+  ][
+    $integral_a^b lambda f(x) d x = lambda integral_a^b f(x) d x$
+  ][
+    $f(x) >= g(x) => integral_a^b f(x) >= integral_a^b g(x) d x$
+  ][
+    $|integral_a^b f(x) d x| <= integral_a^b |f(x)| d x$
+  ][
+    $integral_a^b f(x) d x = integral_a^c f(x) d x + integral_c^b f(x) d x$
+  ]
 
-   $ integral_a^b f(t)g(t) d t = f'(c) integral_a^b g(t) d t$
+  === Teoremi
+  #table(columns: (1fr, 1fr))[
+    ==== Media integrale
+    $f : [a,b] -> RR$ allora
+    $exists c in [a,b]$:\
+    $ mu = f(c) = (integral_a^b f(x) d x)/(a-b) $
+  ][
+    ==== Media integrale pesata
+    $f,g : [a,b] -> RR$ con $g > 0$ in $[a,b]$ allora
+    $exists c in [a,b]$:\
+    $ integral_a^b f(x)g(x) d x = f(c) integral_a^b g(x) d x $
+  ]
 
   Da mettere:
-  - Proprietà degli integrali
   - Tecniche di integrazione
   - integrali circolari? (il grande ritorno)
   - solidi per integrazione
