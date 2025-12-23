@@ -634,6 +634,32 @@
     ==== Sostituzione (Metodo 2)
     $ integral f(g(x)) g'(x) d x = integral f(t) d t $
     $ g(x) = t " e " g'(x) d x = d t $
+  ]  #table(columns: 1fr)[
+    ==== Funzioni Razionali
+    $ integral (P(x))/(Q(x)) d x $
+
+    ===== Passo 1: Divisione
+    Se $"grado" P(x) >= "grado" Q(x)$:
+    $ (P(x))/(Q(x)) = A(x) + (R(x))/(Q(x)) $
+    Dove $A(x)$ è il risultato e $R(x)$ è il resto della divisione
+
+    ===== Passo 2: Fattorizzazione
+    Scomporre il polinomio al denominatore in prodotti di polinomi di primo grado
+
+    ===== Passo 3: Sistema Lineare
+    Riscrivere la funzione razionale in somma di funzioni razionali più semplici \
+    Per ogni $A/(x - a)^n$ \
+    Scriviamo $A/(x - a) + A/(x - a)^2 + dots + C/(x - a)^n$ \
+    Infine trovare i valori delle costanti al numeratore imponendo un sistema lineare
+
+    ===== Passo 4: Integrazione
+    Integrare le funzioni razionali semplici, usando
+    #align(center)[
+      #table(columns: auto)[
+        $ integral (f'(x))/f(x) d x = ln|f(x)| $
+      ]
+    ]
+
   ]
 
   Da mettere:
