@@ -634,7 +634,8 @@
     ==== Sostituzione (Metodo 2)
     $ integral f(g(x)) g'(x) d x = integral f(t) d t $
     $ g(x) = t " e " g'(x) d x = d t $
-  ]  #table(columns: 1fr)[
+  ]
+  #table(columns: 1fr)[
     ==== Funzioni Razionali
     $ integral (P(x))/(Q(x)) d x $
 
