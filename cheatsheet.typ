@@ -669,8 +669,13 @@
     ]
   ]
 
+  Da mettere:
+  - integrali circolari? (il grande ritorno)
+  - solidi per integrazione
+  - qualche trucco sulle aree?
+
   === Integrali Impropri
-  #table(columns: 1fr)[
+  #table(columns: 1fr, inset: 2pt)[
     Un integrale è detto improprio quando uno o entrambi i seguenti casi sono veri:
     #table(columns: (1fr, 1fr))[
       ==== Prima Specie
@@ -682,13 +687,27 @@
       Se $f(x)$ non è definita in $a$
       $ integral_a^b f(x) d x ==> lim_(t->0) integral_(a+t)^b f(x) d x $
     ]
-
+    #table(columns: 1fr)[
+      ==== Caso particolare $integral 1/x^a d x$
+      Sia $a>0$:
+      #table(columns: (1fr, 1fr), stroke: none)[
+        $
+          integral_a^(+oo) 1/x^a d x cases(
+            a > 1 <==> "converge",
+            a <= 1 <==> "diverge",
+          )
+        $
+      ][
+        $
+          integral_0^a 1/x^a d x cases(
+            a < 1 <==> "converge",
+            a >= 1 <==> "diverge",
+          )
+        $
+      ]
+    ]
+    TODO: criteri di confronto integrali impropri
   ]
-
-  Da mettere:
-  - integrali circolari? (il grande ritorno)
-  - solidi per integrazione
-  - qualche trucco sulle aree?
 ]
 
 #section[numeri complessi][
