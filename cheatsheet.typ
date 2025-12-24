@@ -620,45 +620,67 @@
   ]
 
   === Tecnice d'Integrazione
-  #table(columns: (1fr, 1fr))[
-    ==== Per Parti (integrale indefinito)
-    $ integral F dot g" "d x = F dot G - integral f dot G" "d x $
+  #table(columns: 1fr, inset: 0pt)[
+    #table(columns: (1fr, 1fr))[
+      ==== Per Parti (integrale indefinito)
+      $ integral F dot g" "d x = F dot G - integral f dot G" "d x $
+    ][
+      ==== Per Parti (integrale definito)
+      $
+        integral_a^b F dot g" "d x = [F dot G]_a^b - integral_a^b f dot G" "d x
+      $
+    ]
   ][
-    ==== Per Parti (integrale definito)
-    $ integral_a^b F dot g" "d x = [F dot G]_a^b - integral_a^b f dot G" "d x $
+    #table(columns: (1fr, 1fr))[
+      ==== Sostituzione (Metodo 1)
+      $ integral f(x) d x = integral f(g(t)) g'(t) d t $
+      $ x = g(t) " e " d x = g'(t) d t $
+    ][
+      ==== Sostituzione (Metodo 2)
+      $ integral f(g(x)) g'(x) d x = integral f(t) d t $
+      $ g(x) = t " e " g'(x) d x = d t $
+    ]
   ][
-    ==== Sostituzione (Metodo 1)
-    $ integral f(x) d x = integral f(g(t)) g'(t) d t $
-    $ x = g(t) " e " d x = g'(t) d t $
-  ][
-    ==== Sostituzione (Metodo 2)
-    $ integral f(g(x)) g'(x) d x = integral f(t) d t $
-    $ g(x) = t " e " g'(x) d x = d t $
-  ]
-  #table(columns: 1fr)[
-    ==== Funzioni Razionali
-    $ integral (P(x))/(Q(x)) d x $
+    #table(columns: 1fr)[
+      ==== Funzioni Razionali
+      $ integral (P(x))/(Q(x)) d x $
 
-    ===== Passo 1: Divisione
-    Se $"grado" P(x) >= "grado" Q(x)$:
-    $ (P(x))/(Q(x)) = A(x) + (R(x))/(Q(x)) $
-    Dove $A(x)$ è il risultato e $R(x)$ è il resto della divisione
+      ===== Passo 1: Divisione
+      Se $"grado" P(x) >= "grado" Q(x)$:
+      $ (P(x))/(Q(x)) = A(x) + (R(x))/(Q(x)) $
+      Dove $A(x)$ è il risultato e $R(x)$ è il resto della divisione
 
-    ===== Passo 2: Fattorizzazione
-    Scomporre il polinomio al denominatore in prodotti di polinomi di primo grado
+      ===== Passo 2: Fattorizzazione
+      Scomporre il polinomio al denominatore in prodotti di polinomi di primo grado
 
-    ===== Passo 3: Sistema Lineare
-    Riscrivere la funzione razionale in somma di funzioni razionali più semplici \
-    Per ogni $A/(x - a)^n$ \
-    Scriviamo $A/(x - a) + A/(x - a)^2 + dots + C/(x - a)^n$ \
-    Infine trovare i valori delle costanti al numeratore imponendo un sistema lineare
+      ===== Passo 3: Sistema Lineare
+      Riscrivere la funzione razionale in somma di funzioni razionali più semplici \
+      Per ogni $A/(x - a)^n$ \
+      Scriviamo $A/(x - a) + A/(x - a)^2 + dots + C/(x - a)^n$ \
+      Infine trovare i valori delle costanti al numeratore imponendo un sistema lineare
 
-    ===== Passo 4: Integrazione
-    Integrare le funzioni razionali semplici, usando
-    #align(center)[
-      #table(columns: auto)[
-        $ integral (f'(x))/f(x) d x = ln|f(x)| $
+      ===== Passo 4: Integrazione
+      Integrare le funzioni razionali semplici, usando
+      #align(center)[
+        #table(columns: auto)[
+          $ integral (f'(x))/f(x) d x = ln|f(x)| $
+        ]
       ]
+    ]
+  ]
+
+  === Integrali Impropri
+  #table(columns: 1fr)[
+    Un integrale è detto improprio quando uno o entrambi i seguenti casi sono veri:
+    #table(columns: (1fr, 1fr))[
+      ==== Prima Specie
+      L'intervallo di integrazione è illimitato
+      $ integral_a^oo f(x) d x ==> lim_(t->oo) integral_a^t f(x) d x $
+    ][
+      ==== Seconda Specie
+      L'integranda non è limitata \
+      Se $f(x)$ non è definita in $a$
+      $ integral_a^b f(x) d x ==> lim_(t->a) integral_t^b f(x) d x $
     ]
 
   ]
@@ -667,7 +689,6 @@
   - integrali circolari? (il grande ritorno)
   - solidi per integrazione
   - qualche trucco sulle aree?
-  - criteri di convergenza intregrali "impropri"
 ]
 
 #section[numeri complessi][
