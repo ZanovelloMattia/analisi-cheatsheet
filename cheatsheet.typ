@@ -2,11 +2,13 @@
 // #import "/typst/lib.typ": *
 
 // Settings generali per ridurre spazio sprecato
-#set text(size: 4.5pt, font: (
+#set text(size: 5pt, font: (
   "Atkinson Hyperlegible Next",
   "Atkinson Hyperlegible",
 ))
 #set table(inset: 3pt, stroke: .5pt)
+#set grid(row-gutter: 10pt)
+#show math.equation: set text(size: 5pt)
 
 #let rainbow(content) = {
   set text(fill: gradient.linear(..color.map.inferno.map(a => a.darken(30%))))
@@ -22,6 +24,7 @@
 
 #set page(columns: 5, margin: 5pt, flipped: true, footer: footer)
 #set columns(gutter: 0pt)
+
 #place(
   top + center,
   float: true,
@@ -195,9 +198,9 @@
 
 #section(color: aqua.darken(30%))[sviluppi di taylor][
   #table(columns: (auto, 1fr))[
-    $f(x)_(x=a)$
+      $underbracket(f(x), (x=a))$
   ][
-    $f(a) + (f'(a))/1!(x - a) + (f''(a))/2!(x - a)^2 + (f'''(a))/3!(x - a)^3 + o(x^3)$
+    $f(a) + (f'(a))/1!(x - a) + (f''(a))/2!(x - a)^2 + ... + o(x^n)$
   ][
     $sin(x)$
   ][
@@ -215,15 +218,15 @@
   ][
     $1 + x^2/2 + 5/24x^4 + 61/720x^6 + 277/8064x^8 + o(x^8)$
   ][
-    $arcsin(x)$
+    $sin^(-1)(x)$
   ][
     $x + x^3/6 + 3/40x^5 + 5/112x^7 + 35/1152x^9 + o(x^9)$
   ][
-    $arccos(x)$
+    $cos^(-1)(x)$
   ][
     $pi/2 - x - x^3/6 - 3/40x^5 - 5/112x^7 - 35/1152x^9 + o(x^9)$
   ][
-    $arctan(x)$
+    $tan^(-1)(x)$
   ][
     $x - x^3/3 + x^5/5 - x^7/7 + x^9/9 + o(x^9)$
   ][
@@ -318,11 +321,11 @@
 #section(color: rgb("#a47b1d"))[derivate / primitive][
 
   TODO:
-  - Retta tangente
+  // - Retta tangente
   - Punti di non derivabilità
 
-  #let derivate = rgb("#78101c");
-  #let integrali = rgb("#0a0885");
+  #let derivate = black;
+  #let integrali = black;
 
   #set text(5pt)
   //top table -----------------------------------------------------------------
@@ -475,7 +478,7 @@
 
   //bottom table----------------------------------------------
   #table(
-    columns: (2fr, 1fr, 2fr),
+    columns: (auto, auto, 1fr),
     inset: 2pt,
     align: (horizon, horizon, horizon),
 
@@ -590,7 +593,23 @@
   ][
     $ [1/(f(x))]' = -(f'(x))/(f^2(x)) $
   ]
+
+  #grid(columns: (1fr, 1.2fr))[
+      #grid(columns: (1fr))[
+            === Retta tangente
+            $ y = f'(x_0)(x - x_0) + f(x_0) $
+        ][
+            === Derivata dell'inversa
+            - $(f^(-1))'(y) = 1/(f'(y))$
+            - $(f^(-1))'(y) = 1/(f'(f^(-1)(x)))$
+        ]][
+        === Punti di non derivabilità
+        - *Punto angoloso* \ $lim_(x -> x_0^+) f'(x) != lim_(x -> x_0^-) f'(x)$
+        - *Cuspide* \ $lim_(x -> x_0^+) f'(x) = +oo \ lim_(x -> x_0^-) f'(x) = -oo$
+        - *Flesso a tang. verticale* \ $lim_(x -> x_0^+) f'(x) = lim_(x -> x_0^-) f'(x) = plus.minus oo$
+    ]
 ]
+
 
 #section[integrali][
   === Proprietà
@@ -662,11 +681,7 @@
   ][
       ===== Passo 4: Integrazione
       Integrare le funzioni razionali semplici, usando
-      #align(center)[
-        #table(columns: auto)[
             $ integral (f'(x))/f(x) d x = ln|f(x)| $
-        ]
-      ]
   ]
 
 
