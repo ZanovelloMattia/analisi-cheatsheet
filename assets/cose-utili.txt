@@ -1,0 +1,2 @@
+- Da aggiungere sicuramente tutti gli operatori di stream che sono agnostici a
+file e io di testo

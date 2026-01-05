@@ -789,9 +789,6 @@
   #align(center)[
     $rho = root(n, r)$ e $theta_k = phi/n + (2k pi)/n$ con $k = 0,1,dots,n-1$
   ]
-
-  - Identità di eulero
-  - Identità trigonometriche e numeri complessi
 ]
 #section[equazioni differenziali][
   === Un po' di teoria i guess?
@@ -833,6 +830,45 @@
   ]
 ]
 
+#section(color: color.maroon.darken(40%))[Teoremi del calcolo differenziale][
+  #table(columns: (1fr, 1fr))[
+    === Teorema di Rolle
+    1. $f$ continua $[a, b]$, deriv. $(a, b)$
+    2. $f(a) = f(b)$
+    $ exists c in (a, b) : f'(c) = 0 $
+  ][
+    === Teorema di Lagrange
+    1. $f$ continua $[a, b]$, deriv. $(a, b)$
+    $ exists c in (a, b) : f'(c) = (f(b) - f(a))/(b - a) $
+  ][
+    === Teorema di de l'Hôpital
+    1. $f, g$ derivabili nell'intorno di a, $g'(x) = 0$
+
+    $
+      lim_(x->a) f(x)/g(x) = lim_(x->a) (f'(x))/(g'(x))
+    $
+  ]
+
+  === Studio delle derivate
+  #table(columns: (auto, 1fr, auto, 1fr))[
+    $f'(x_0) > 0$
+  ][
+    *crescente*
+  ][
+    $f'(x_0) < 0$
+  ][
+    *decrescente*
+  ][
+    $f''(x_0) > 0$
+  ][
+    *convessa*
+  ][
+    $f''(x_0) < 0$
+  ][
+    *concava*
+  ]
+]
+
 #section(color: color.olive.darken(40%))[funzioni iperboliche][
   === Funzioni
   #grid(columns: (1fr, 1fr, 1fr))[
@@ -861,7 +897,32 @@
 
 
 
-=== Quadrati
+#section[Trigonometria][
+  === #text(fill: green.darken(40%))[sin $RR -> [-1; 1]$], #text(fill: orange)[cos $RR -> [-1; 1]$], tan $RR \\ {pi/2 + k pi} -> RR$
+  #image("assets/sincostan.jpeg")
+
+
+  )
+
+
+  === #text(fill: green.darken(40%))[arcsin $[-1;1] -> [-pi/2; pi/2]$], #text(fill: orange)[arccos $[-1;1] -> [0; pi]$], arctan $RR -> (-pi/2; pi/2)$
+  #image("assets/arcsinarccosarctan.jpeg")
+
+  === #text(fill: green.darken(40%))[sec $RR \\ {pi/2 + k pi} -> (-∞;-1] ∪ [1;+∞)$] \ #text(
+    fill: purple.darken(40%),
+  )[csc $RR \\ {k pi} -> (-∞;-1] ∪ [1;+∞)$]
+  #image("assets/seccsc.jpeg")
+]
+
+#section[Iperbolometria][
+  === #text(fill: green.darken(40%))[sinh $RR -> RR$], #text(fill: orange)[cosh $RR -> [1;+∞)$], tanh $RR -> (-1;1)$
+  #image("assets/sinhcoshtanh.jpeg")
+
+
+  === #text(fill: green.darken(40%))[arcsinh $RR -> RR$], #text(fill: orange)[arccosh $[1;+∞) -> [0;+∞)$], arctan $RR -> (-pi/2; pi/2)$
+  #image("assets/arcsinh.jpeg")
+]
+
 #image("assets/grafici-1.png")
 #image("assets/grafici-2.png")
 #image("assets/grafici-3.png")
