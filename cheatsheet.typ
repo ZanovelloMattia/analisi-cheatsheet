@@ -198,7 +198,7 @@
 
 #section(color: aqua.darken(30%))[sviluppi di taylor][
   #table(columns: (auto, 1fr))[
-      $underbracket(f(x), (x=a))$
+    $underbracket(f(x), (x=a))$
   ][
     $f(a) + (f'(a))/1!(x - a) + (f''(a))/2!(x - a)^2 + ... + o(x^n)$
   ][
@@ -581,19 +581,19 @@
   ]
 
   #grid(columns: (1fr, 1.2fr))[
-      #grid(columns: (1fr))[
-            === Retta tangente
-            $ y = f'(x_0)(x - x_0) + f(x_0) $
-        ][
-            === Derivata dell'inversa
-            - $(f^(-1))'(y) = 1/(f'(y))$
-            - $(f^(-1))'(y) = 1/(f'(f^(-1)(x)))$
-        ]][
-        === Punti di non derivabilità
-        - *Punto angoloso* \ $lim_(x -> x_0^+) f'(x) != lim_(x -> x_0^-) f'(x)$
-        - *Cuspide* \ $lim_(x -> x_0^+) f'(x) = +oo \ lim_(x -> x_0^-) f'(x) = -oo$
-        - *Flesso a tang. verticale* \ $lim_(x -> x_0^+) f'(x) = lim_(x -> x_0^-) f'(x) = plus.minus oo$
-    ]
+    #grid(columns: 1fr)[
+      === Retta tangente
+      $ y = f'(x_0)(x - x_0) + f(x_0) $
+    ][
+      === Derivata dell'inversa
+      - $(f^(-1))'(y) = 1/(f'(y))$
+      - $(f^(-1))'(y) = 1/(f'(f^(-1)(x)))$
+    ]][
+    === Punti di non derivabilità
+    - *Punto angoloso* \ $lim_(x -> x_0^+) f'(x) != lim_(x -> x_0^-) f'(x)$
+    - *Cuspide* \ $lim_(x -> x_0^+) f'(x) = +oo \ lim_(x -> x_0^-) f'(x) = -oo$
+    - *Flesso a tang. verticale* \ $lim_(x -> x_0^+) f'(x) = lim_(x -> x_0^-) f'(x) = plus.minus oo$
+  ]
 ]
 
 #section[formule trigonometriche][
@@ -656,24 +656,36 @@
     ]
   ]
 
+  === Sostituzione integrali definiti
+  #table(columns: (1fr, 1fr))[
+    $
+      integral_a^b f(phi(x))phi'(x)d x = integral_phi(a)^phi(b) f(u)d u \
+      u = phi(x) #h(10pt) d u = phi'(x) d x
+    $
+  ][
+    $
+      integral_phi(a)^phi(b) f(x)d x = integral_a^b f(phi(t))phi'(t)d x \
+      u = phi(x) #h(10pt) d u = phi'(x) d x
+    $
+  ]
 
-  ==== Funzioni Razionali $integral (P(x))/(Q(x)) d x$
+  === Funzioni Razionali $integral (P(x))/(Q(x)) d x$
   #table(columns: (1fr, 1fr))[
 
-      ===== Passo 1: Divisione
-      $ (P(x))/(Q(x)) = A(x) + (R(x))/(Q(x)) $
-      - $A(x)$ è il risultato, $R(x)$ il resto.
-      - Integrare A(x) normalmente, proseguire per risolvere il resto.
+    ===== Passo 1: Divisione
+    $ (P(x))/(Q(x)) = A(x) + (R(x))/(Q(x)) $
+    - $A(x)$ è il risultato, $R(x)$ il resto.
+    - Integrare A(x) normalmente, proseguire per risolvere il resto.
   ][
-      ===== Passo 2: Fattorizzazione
-      Scomporre il polinomio al denominatore in prodotti di polinomi di primo grado
+    ===== Passo 2: Fattorizzazione
+    Scomporre il polinomio al denominatore in prodotti di polinomi di primo grado
   ][
-      ===== Passo 3: Sistema Lineare
-      Dividere in somma di fattori
-      $ A/(x-a) + B/(x-b) + ... $
+    ===== Passo 3: Sistema Lineare
+    Dividere in somma di fattori
+    $ A/(x-a) + B/(x-b) + ... $
   ][
-      ===== Passo 4: Integrazione
-      Integrare le funzioni razionali semplici, usando
+    ===== Passo 4: Integrazione
+    Integrare le funzioni razionali semplici, usando
   ]
 
 
@@ -684,36 +696,36 @@
   - qualche trucco sulle aree?
 
   === Integrali Impropri
-    #table(columns: 1fr)[
-      ==== Caso particolare $integral 1/x^a d x$
-      Sia $a>0$:
-      #table(columns: (1fr, 1fr), stroke: none)[
-        $
-          integral_a^(+oo) 1/x^a d x cases(
-            a > 1 <==> "converge",
-            a <= 1 <==> "diverge",
-          )
-        $
-      ][
-        $
-          integral_0^a 1/x^a d x cases(
-            a < 1 <==> "converge",
-            a >= 1 <==> "diverge",
-          )
-        $
-      ]
+  #table(columns: 1fr)[
+    ==== Caso particolare $integral 1/x^a d x$
+    Sia $a>0$:
+    #table(columns: (1fr, 1fr), stroke: none)[
+      $
+        integral_a^(+oo) 1/x^a d x cases(
+          a > 1 <==> "converge",
+          a <= 1 <==> "diverge",
+        )
+      $
+    ][
+      $
+        integral_0^a 1/x^a d x cases(
+          a < 1 <==> "converge",
+          a >= 1 <==> "diverge",
+        )
+      $
     ]
+  ]
   // ]
   #table(columns: 1fr)[
-      === Integrale di Gauss
-      #figure(image("assets/gaussiana.png"), caption: [Grafico di $e^(-x^2)$])
+    === Integrale di Gauss
+    #figure(image("assets/gaussiana.png"), caption: [Grafico di $e^(-x^2)$])
 
-      #grid(columns: (1fr, 1fr))[
+    #grid(columns: (1fr, 1fr))[
       $ integral_(-oo)^(+oo) e^(-x^2) d x = sqrt(pi) $
-      ][
+    ][
 
-          $ integral_0^(+oo) e^(-x^2) d x = (sqrt(pi))/2 $
-      ]
+      $ integral_0^(+oo) e^(-x^2) d x = (sqrt(pi))/2 $
+    ]
   ]
 ]
 
@@ -827,10 +839,10 @@
     $ (cosh x)^2 = (e^(2x) + e^(-2x) + 2)/4 $][
     $ sinh 2x = 2 sinh x cosh x $ ][
     $ cosh 2x = cosh^2 x + sinh^2 x $]
-    $ (cosh x)^2 - (sinh x)^2 = 1 $
+  $ (cosh x)^2 - (sinh x)^2 = 1 $
 
-    === Grafici delle funzioni
-    #figure(image("./assets/iperboliche.png", height: 75pt))
+  === Grafici delle funzioni
+  #figure(image("./assets/iperboliche.png", height: 75pt))
 ]
 
 #pagebreak()
@@ -841,7 +853,7 @@
 
 
 
-  === Quadrati
+=== Quadrati
 #image("assets/grafici-1.png")
 #image("assets/grafici-2.png")
 #image("assets/grafici-3.png")
