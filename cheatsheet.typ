@@ -6,7 +6,7 @@
   "Atkinson Hyperlegible Next",
   "Atkinson Hyperlegible",
 ))
-#set table(inset: 3pt, stroke: 1pt)
+#set table(inset: 3pt, stroke: 0.7pt)
 #set grid(row-gutter: 10pt)
 #show math.equation: set text(size: 5pt)
 
@@ -833,7 +833,7 @@
   ][
     === Teorema di Cauchy
     1. $f,g$ cont. $[a,b]$, deriv. $(a,b)$
-    2. $forall x in (a,b) : g'(x) != 0$ 
+    2. $forall x in (a,b) : g'(x) != 0$
 
     $ exists c in (a,b) : (f(b) - f(a))/(g(b) - g(a)) = (f'(c))/(g'(c)) $
   ][
@@ -865,21 +865,69 @@
   ]
 ]
 
-#section[formule trigonometriche][
+#section(color: rgb("#4F8237"))[formule trigonometriche][
   $ sin^2 alpha + cos^2 alpha = 1 $
-  === Formule
   ==== Addizione
-  $sin(alpha plus.minus beta) = sin alpha cos beta plus.minus cos alpha sin beta$\
-  $cos(alpha plus.minus beta) = cos alpha cos beta minus.plus sin alpha sin beta$\
-  $tan(alpha plus.minus beta) = (tan alpha plus.minus tan beta)/(1 minus.plus tan alpha tan beta)$\
-  $cot(alpha plus.minus beta) = (cot alpha cot beta minus.plus 1)/(cot beta plus.minus cot alpha)$\
-  $sin(alpha + beta)sin(alpha - beta) = sin^2 alpha - sin^2 beta = cos^2 alpha - cos^2 beta$\
-  $cos(alpha + beta)sin(alpha - beta) = cos^2 alpha - sin^2 beta = cos^2 beta - sin^2 alpha$\
+  #table(columns: 1fr, align: center, inset: 0pt)[
+    #table(columns: (1fr, auto))[
+      #align(horizon)[
+        $
+          sin(alpha plus.minus beta) = sin alpha cos beta plus.minus cos alpha sin beta
+        $
+      ]
+    ][
+      $
+        tan(alpha plus.minus beta) = (tan alpha plus.minus tan beta)/(1 minus.plus tan alpha tan beta)
+      $
+    ][
+      #align(horizon)[
+        $
+          cos(alpha plus.minus beta) = cos alpha cos beta minus.plus sin alpha sin beta
+        $
+      ]
+    ][
+      $
+        cot(alpha plus.minus beta) = (cot alpha cot beta minus.plus 1)/(cot beta plus.minus cot alpha)
+      $
+    ]
+  ][
+    #grid(columns: 1fr, inset: 3pt)[
+      $sin(alpha + beta)sin(alpha - beta) = sin^2 alpha - sin^2 beta = cos^2 alpha - cos^2 beta$\
+      $cos(alpha + beta)sin(alpha - beta) = cos^2 alpha - sin^2 beta = cos^2 beta - sin^2 alpha$\
+    ]
+  ]
   ==== Duplicazione
-  $sin 2 alpha = 2 sin alpha cos alpha$\
-  $cos 2 alpha = cos^2 alpha - sin^2 alpha = 1 - 2 sin^2 alpha = 2 cos^2 alpha - 1$\
-  $tan 2 alpha = (2 tan alpha)/(1 - tan^2 alpha) = 2/(cot alpha - tan alpha)$\
-  $tan 2 alpha = (cot^2 alpha - 1)/(2 cot alpha) = (cot alpha - tan alpha)/2$\
+  #table(columns: (auto, 1fr), inset: 0pt)[
+    #align(horizon + center)[
+      #grid(columns: auto, inset: 2pt)[
+        $ sin 2 alpha = 2 sin alpha cos alpha $
+      ]
+    ]
+  ][
+    #grid(columns: 1fr, inset: 2pt)[
+      $
+        tan 2 alpha & = (2 tan alpha)/(1 - tan^2 alpha) & = 2/(cot alpha - tan alpha)
+      $
+    ]
+  ][
+    #table(columns: (auto, auto), inset: 0pt)[
+      #align(horizon)[
+        #grid(columns: auto, inset: 2pt)[
+          $ cos 2 alpha =\ cos^2 alpha - sin^2 alpha $
+        ]
+      ]
+    ][
+      #table(columns: auto)[$= 1 - 2 sin^2 alpha$][$= 2 cos^2 alpha - 1$]
+    ]
+  ][
+    #align(horizon)[
+      #grid(columns: 1fr, inset: 2pt)[
+        $
+          cot 2 alpha & = (cot^2 alpha - 1)/(2 cot alpha) & = (cot alpha - tan alpha)/2
+        $
+      ]
+    ]
+  ]
   ==== Bisezione
   $sin(alpha/2) = plus.minus sqrt((1 - cos alpha)/2)$\
   $cos(alpha/2) = plus.minus sqrt((1 + cos alpha)/2)$\
