@@ -727,7 +727,7 @@
 ]
 
 
-#section[numeri complessi][
+#section(color: orange.darken(10%))[numeri complessi][
   === Polinomio a coefficienti reali
   #text(size: 4pt)[
     - Un polinomio di qualsiasi grado $n$ a coefficienti reale ha esattamente $n$ soluzioni.
