@@ -701,13 +701,6 @@
     Integrare le funzioni razionali semplici
   ]
 
-
-
-  Da mettere:
-  - integrali circolari? (il grande ritorno)
-  - solidi per integrazione
-  - qualche trucco sulle aree?
-
   === Integrali Impropri
   #table(columns: 1fr)[
     ==== Caso particolare $integral 1/x^a d x$
