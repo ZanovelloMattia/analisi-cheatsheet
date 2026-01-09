@@ -152,8 +152,11 @@
     #image("./assets/iniettiva.png", height: 30pt)
   ]
   ==== Lipschizstiana
-  - $exists L > 0 : forall x,y in A, |f(x) - f(y)| <= L|x-y|$
-  - $f$ si dice lipschizstiana su $I$ se la sua derivata è limitata.\ Dunque: $exists L > 0 : |f'(x)| <= L$
+  #grid(columns: (1fr, 1fr))[
+      1. $ exists L > 0 : forall x,y in A, \ |f(x) - f(y)| <= L|x-y| $
+  ][
+      2. $f$ si dice lipschizstiana su $I$ se la sua derivata è limitata.\ Dunque: $exists L > 0 : |f'(x)| <= L$
+  ]
 
   === Limiti
   #set text(size: 4.5pt);
