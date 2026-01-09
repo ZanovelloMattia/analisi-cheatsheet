@@ -773,15 +773,15 @@
       $w = r(cos phi + i sin phi) = r e^(i phi)$
     ]
   ][
-    #grid(columns: 1fr, inset: 3pt)[
+    #grid(columns: 1fr, inset: 2pt)[
       $ z dot w & = rho dot r [cos(theta + phi) + i sin(theta + phi)] $
     ]
   ][
-    #grid(columns: 1fr, inset: 3pt)[
+    #grid(columns: 1fr, inset: 1pt)[
       $ z / w & = rho / r [cos(theta - phi) + i sin(theta - phi)] $
     ]
   ][
-    #grid(columns: 1fr, inset: 3pt)[
+    #grid(columns: 1fr, inset: 2pt)[
       $ z^n = rho^n e^(i theta n) = rho^n [cos(theta n) + i sin(theta n)] $
     ]
   ]
