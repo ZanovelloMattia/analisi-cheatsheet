@@ -64,6 +64,9 @@
 #let iff = $arrow.double.l.r$
 
 #section(color: green.darken(30%))[serie matematiche][
+    === Condizione necessaria di convergenza
+    $ sum^oo a_n "converge" <=> lim_(n -> oo) a_n = 0 $
+
   === Serie notevoli
   #table(columns: (1fr, 1fr))[
     === Serie armonica
@@ -88,6 +91,10 @@
       - $L in RR =>$ $C(a_n)$ #iff $C(b_n)$
       - $L = 0 =>$ $C(b_n)$ $=> C(a_n)$
       - $L = oo =>$ $not(C(b_n))$ $=> not(C(a_n))$
+    ][
+        === Criterio di condens. di Cauchy
+        Per $a_n$ decresc, $a_n >= 0$ allora:
+        $ C(sum_(n = 1)^oo a_n) <=> C(sum_(k = 0)^oo 2^k a_(2k)) $
     ]
   ][
     #table(columns: 1fr)[
@@ -206,21 +213,6 @@
   ]
 ]
 
-#section(color: red.darken(50%))[Limiti][
-  *Ordini per $x->oo$*: $log x < sqrt(x) < x^k < k^x < x! < x^x$
-
-  #set text(size: 5pt)
-  #table(columns: (1fr, 1fr, 1fr))[
-    $ lim_(x->0) frac(sin x, x) = 1 $][
-    $ lim_(x->0) (log_a (1 + x))/ x = 1/(ln a) $][
-    $ lim_(x->oo) (1 + 1/x)^x = e $][
-    $ lim_(x->0) (overbrace(a^x, a>0) - 1)/(x) = ln a $][
-    $ lim_(x->0) (1 - cos x)/(x^2) = 1/2 $][
-    $ lim_(x->0) ((1+x)^k - 1)/x = k $][
-    $ lim_(x->0) (tan x)/x = 1 $][
-    $ lim_(x->0) arcsin(x)/x = 1 $][
-  ]
-]
 
 #section(color: aqua.darken(30%))[sviluppi di taylor][
   #table(columns: (auto, 1fr))[
@@ -619,6 +611,22 @@
     - *Punto angoloso* \ $lim_(x -> x_0^+) f'(x) != lim_(x -> x_0^-) f'(x)$
     - *Cuspide* \ $lim_(x -> x_0^+) f'(x) = +oo \ lim_(x -> x_0^-) f'(x) = -oo$
     - *Flesso a tang. verticale* \ $lim_(x -> x_0^+) f'(x) = lim_(x -> x_0^-) f'(x) = plus.minus oo$
+  ]
+]
+
+#section(color: red.darken(50%))[Limiti][
+  *Ordini per $x->oo$*: $log x < sqrt(x) < x^k < k^x < x! < x^x$
+
+  #set text(size: 5pt)
+  #table(columns: (1fr, 1fr, 1fr))[
+    $ lim_(x->0) frac(sin x, x) = 1 $][
+    $ lim_(x->0) (log_a (1 + x))/ x = 1/(ln a) $][
+    $ lim_(x->oo) (1 + 1/x)^x = e $][
+    $ lim_(x->0) (overbrace(a^x, a>0) - 1)/(x) = ln a $][
+    $ lim_(x->0) (1 - cos x)/(x^2) = 1/2 $][
+    $ lim_(x->0) ((1+x)^k - 1)/x = k $][
+    $ lim_(x->0) (tan x)/x = 1 $][
+    $ lim_(x->0) arcsin(x)/x = 1 $][
   ]
 ]
 
