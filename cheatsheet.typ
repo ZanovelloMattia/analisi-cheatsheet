@@ -830,7 +830,7 @@
     1. Trovare l'equazione associata $a lambda^2 + b lambda + c = 0$
       - $Delta > 0 => c_1 e^(lambda_1 x) + c_2 e^(lambda_2 x)$
       - $Delta = 0 => c_1 e^(lambda x) + underline(x) c_2 e^(lambda x)$
-      - $Delta < 0 =>$\ $e^(alpha x)(c_1 cos(x) + c_2 sin (x))$\
+      - $Delta < 0 =>$\ $e^(alpha x)(c_1 cos(beta x) + c_2 sin (beta x))$\
         #text(size: 4pt)[La soluzione è nella forma $alpha plus.minus beta i$]
   ][
     === Secondo ordine lineari
