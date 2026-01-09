@@ -239,6 +239,14 @@
   ][
     $1 + x^2/2 + 5/24x^4 + 61/720x^6 + 277/8064x^8 + o(x^8)$
   ][
+      $csc(x)$
+  ][
+      $1/x + x/6 + 7/360 x^3 + 31/15120 x^5 + o(x^5)$
+  ][
+      $cot(x)$
+  ][
+      $1/x - x/3 - x^3/45 - 2/945 x^5 + o(x^5)$
+  ][
     $sin^(-1)(x)$
   ][
     $x + x^3/6 + 3/40x^5 + 5/112x^7 + 35/1152x^9 + o(x^9)$
@@ -285,21 +293,28 @@
   ]
 
   === Algebra degli o(x)
-  #table(columns: (1fr, 1fr, 1fr))[
-    $o(g) plus.minus o(g) = o(g)$
-  ][
-    $o(g) dot o(g) = o(g^2)$
-  ][
-    $o(g)/o(g) = 0$
-  ][
-    $o(o(g)) = o(g)$
-  ][
-    $a dot o(g) = o(g)$
-  ][
-    $o(1) = "infinitesimo"$
-  ]
+  #grid(inset: 0pt, gutter: 0pt )[
+        #table(columns: (1fr, 1fr, 1fr))[
+            $o(g) plus.minus o(g) = o(g)$
+        ][
+            $o(g) dot o(h) = o(g dot h)$
+        ][
+            $o(g)/o(g) = 0$
+        ][
+            $o(o(g)) = o(g)$
+        ][
+            $a dot o(g) = o(g)$
+        ][
+            $o(1) -> 0$
+        ]
+    ][
+        #table(columns: (1fr, 1fr))[
+            $a + o(a) = a(1 + o(1))$
+        ][
+            $o(x^2) + o(x^3) = o(x^2)$
+        ]
+    ]
 ]
-
 
 // #section()[funzioni iperboliche][
 //   #table(columns: (1fr, 1fr, auto))[
@@ -689,16 +704,12 @@
   ]
 
   === Sostituzione integrali definiti
-  #table(columns: (1fr, 1fr))[
-    $
-      integral_a^b f(phi(x))phi'(x)d x = integral_phi(a)^phi(b) f(u)d u \
-      u = phi(x) #h(10pt) d u = phi'(x) d x
-    $
+  #table(columns: (1fr))[
+      ==== Via diretta
+      $ integral_a^b f(g(x))g'(x) d x = integral_(g(a))^(g(b)) f(t) d t $
   ][
-    $
-      integral_phi(a)^phi(b) f(x)d x = integral_a^b f(phi(t))phi'(t)d x \
-      u = phi(x) #h(10pt) d u = phi'(x) d x
-    $
+      ==== Per funzioni inverse
+      $ integral_a^b f(t) d t = integral_phi(a)^phi(b) f(phi^-1(x))(phi^-1)'(x) d x $
   ]
 
   === Funzioni Razionali $integral (P(x))/(Q(x)) d x$
@@ -764,19 +775,25 @@
 
   Definiamo $z in CC$ come $z = a + i b$ con $a, b in RR$ e $i^2=-1$
 
-  #table(columns: (1fr, 1fr))[
+  #table(columns: (auto, 1fr, auto))[
     ==== Complesso coniugato
     $overline(z) = a - b i$
     ==== Modulo
     $|z| = |overline(z)| = sqrt(a^2 + b^2)$
   ][
-    === Piano di gauss
+
+    === Rappr. sul piano
     $z=(a,b) in RR times RR = RR^2$\
     $Im(z) ~ y$ sul piano cartesiano\
     $Re(z) ~ x$ sul piano cartesiano
 
     #nb[NB]: $Im(2i) = 2$, non $2i$
+  ][
+      === Identità
+      - $i^i = e^(-pi/2)$\
+      - $e^(pi i) + 1 = 0$
   ]
+
   === Algebretta
   #table(columns: (1fr, 1fr), align: center)[
     $z = a + b i$ ][ $z= c + d i$
