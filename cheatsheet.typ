@@ -1068,7 +1068,7 @@
   #image("assets/sinhcoshtanh.jpeg")
 
 
-  === #text(fill: green.darken(40%))[arcsinh $RR -> RR$], #text(fill: orange)[arccosh $[1;+∞) -> [0;+∞)$], arctan $RR -> (-pi/2; pi/2)$
+  === #text(fill: green.darken(40%))[arcsinh $RR -> RR$], #text(fill: orange)[arccosh $[1;+∞) -> [0;+∞)$], arctanh $(-1, 1) -> RR$
   #image("assets/arcsinh.jpeg")
 ]
 
